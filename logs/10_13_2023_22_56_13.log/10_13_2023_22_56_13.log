@@ -1,0 +1,15 @@
+[ 2023-10-13 22:56:13,703 ] 19 root - INFO - At model trainier
+[ 2023-10-13 22:56:13,703 ] 13 root - INFO - Data Ingestion is started
+[ 2023-10-13 22:56:13,793 ] 17 root - INFO - Saving data
+[ 2023-10-13 22:56:14,100 ] 22 root - INFO - Ingestion success
+[ 2023-10-13 22:56:14,100 ] 23 root - INFO - Training data stored at artifacts\train.csv
+[ 2023-10-13 22:56:14,100 ] 24 root - INFO - Test path stored at artifacts\test.csv
+[ 2023-10-13 22:56:14,102 ] 17 root - INFO - Initiating Pipeline
+[ 2023-10-13 22:56:14,326 ] 23 root - INFO - Splitting data in train and test
+[ 2023-10-13 22:56:14,341 ] 33 root - INFO - Establishing Pipeline
+[ 2023-10-13 22:56:14,341 ] 54 root - INFO - Pipeline creation done successfully
+[ 2023-10-13 22:56:14,351 ] 56 root - INFO - Pipleine Successfully created saving pickle file of preprocessor
+[ 2023-10-13 22:56:14,352 ] 58 root - INFO - Preprocessor saved in models
+[ 2023-10-13 22:56:14,354 ] 24 root - INFO - Transforming data
+[ 2023-10-13 22:56:14,484 ] 29 root - INFO - Doing hyperparameter tuning for Decision Tree Classifier
+[ 2023-10-13 22:56:22,401 ] 65 root - INFO - Some Error has occured
