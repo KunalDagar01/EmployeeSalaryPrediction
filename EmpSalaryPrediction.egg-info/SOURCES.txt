@@ -1,0 +1,7 @@
+setup.py
+EmpSalaryPrediction.egg-info/PKG-INFO
+EmpSalaryPrediction.egg-info/SOURCES.txt
+EmpSalaryPrediction.egg-info/dependency_links.txt
+EmpSalaryPrediction.egg-info/requires.txt
+EmpSalaryPrediction.egg-info/top_level.txt
+src/__init__.py
