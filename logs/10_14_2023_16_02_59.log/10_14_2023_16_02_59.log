@@ -1,0 +1,38 @@
+[ 2023-10-14 16:02:59,833 ] 19 root - INFO - At model trainier
+[ 2023-10-14 16:02:59,834 ] 13 root - INFO - Data Ingestion is started
+[ 2023-10-14 16:02:59,920 ] 17 root - INFO - Saving data
+[ 2023-10-14 16:03:00,172 ] 22 root - INFO - Ingestion success
+[ 2023-10-14 16:03:00,172 ] 23 root - INFO - Training data stored at artifacts\train.csv
+[ 2023-10-14 16:03:00,173 ] 24 root - INFO - Test path stored at artifacts\test.csv
+[ 2023-10-14 16:03:00,175 ] 17 root - INFO - Initiating Pipeline
+[ 2023-10-14 16:03:00,269 ] 23 root - INFO - Splitting data in train and test
+[ 2023-10-14 16:03:00,274 ] 33 root - INFO - Establishing Pipeline
+[ 2023-10-14 16:03:00,274 ] 54 root - INFO - Pipeline creation done successfully
+[ 2023-10-14 16:03:00,275 ] 56 root - INFO - Pipleine Successfully created saving pickle file of preprocessor
+[ 2023-10-14 16:03:00,276 ] 58 root - INFO - Preprocessor saved in models
+[ 2023-10-14 16:03:00,277 ] 24 root - INFO - Splitting Sucess
+[ 2023-10-14 16:03:00,277 ] 25 root - INFO - Got Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num',
+       'marital-status', 'occupation', 'relationship', 'race', 'sex',
+       'capital-gain', 'capital-loss', 'hours-per-week', 'country'],
+      dtype='object') as column names
+[ 2023-10-14 16:03:00,277 ] 31 root - INFO - Transforming data
+[ 2023-10-14 16:03:00,479 ] 36 root - INFO - Doing hyperparameter tuning for Decision Tree Classifier
+[ 2023-10-14 16:03:11,711 ] 47 root - INFO - Done hyperpamater tuning
+[ 2023-10-14 16:03:11,711 ] 54 root - INFO - Model Training
+[ 2023-10-14 16:03:11,844 ] 57 root - INFO - Training Success
+[ 2023-10-14 16:03:11,872 ] 63 root - INFO - Training success
+[ 2023-10-14 16:03:11,872 ] 64 root - INFO - Accuracy is 85.43351417750026 %
+[ 2023-10-14 16:03:11,872 ] 65 root - INFO - Classification report 
+               precision    recall  f1-score   support
+
+           0       0.87      0.96      0.91      7455
+           1       0.79      0.52      0.63      2314
+
+    accuracy                           0.85      9769
+   macro avg       0.83      0.74      0.77      9769
+weighted avg       0.85      0.85      0.84      9769
+ 
+[ 2023-10-14 16:03:11,873 ] 66 root - INFO - confusion matrix 
+ [[7139  316]
+ [1107 1207]]
+[ 2023-10-14 16:03:11,873 ] 67 root - INFO - saved model file at models

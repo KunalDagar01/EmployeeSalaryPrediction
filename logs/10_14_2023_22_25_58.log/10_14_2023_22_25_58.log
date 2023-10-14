@@ -1,0 +1,15 @@
+[ 2023-10-14 22:25:59,515 ] 11 root - INFO - In App.py
+[ 2023-10-14 22:25:59,515 ] 14 root - INFO - Showing Index page
+[ 2023-10-14 22:25:59,591 ] 96 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.37:8080
+[ 2023-10-14 22:25:59,591 ] 96 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2023-10-14 22:26:56,650 ] 22 root - INFO - Submit command recieved
+[ 2023-10-14 22:26:56,656 ] 41 root - INFO - recieved values [51, 'Private', 108435, 'Masters', 14, 'Married-civ-spouse', 'Prof-specialty', 'Husband', 'White', 'Male', 0, 0, 47, 'United-States']
+[ 2023-10-14 22:26:58,698 ] 16 root - INFO - In Predict py importing models
+[ 2023-10-14 22:26:59,204 ] 24 root - INFO - Data Transoformation
+[ 2023-10-14 22:26:59,204 ] 26 root - INFO - Predicting Results
+[ 2023-10-14 22:26:59,216 ] 33 root - INFO - Result is 1
+[ 2023-10-14 22:26:59,216 ] 47 root - INFO - Done Prediction
+[ 2023-10-14 22:26:59,232 ] 96 werkzeug - INFO - 127.0.0.1 - - [14/Oct/2023 22:26:59] "POST /submit HTTP/1.1" 200 -

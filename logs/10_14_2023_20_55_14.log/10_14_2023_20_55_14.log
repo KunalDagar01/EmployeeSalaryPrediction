@@ -1,0 +1,294 @@
+[ 2023-10-14 20:55:21,087 ] 11 root - INFO - In App.py
+[ 2023-10-14 20:55:21,087 ] 14 root - INFO - Showing Index page
+[ 2023-10-14 20:55:21,187 ] 96 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.37:8080
+[ 2023-10-14 20:55:21,189 ] 96 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2023-10-14 20:57:52,519 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 20:57:52] "GET / HTTP/1.1" 200 -
+[ 2023-10-14 20:57:52,711 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 20:57:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2023-10-14 20:58:08,334 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 20:58:08] "GET / HTTP/1.1" 200 -
+[ 2023-10-14 20:58:12,992 ] 96 werkzeug - INFO - 192.168.1.36 - - [14/Oct/2023 20:58:12] "GET / HTTP/1.1" 200 -
+[ 2023-10-14 20:58:14,147 ] 96 werkzeug - INFO - 192.168.1.36 - - [14/Oct/2023 20:58:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2023-10-14 21:03:49,147 ] 22 root - INFO - Submit command recieved
+[ 2023-10-14 21:03:49,147 ] 40 root - INFO - recieved values [51, 'Private', 108435, 'Masters', 14, None, 'Prof-specialty', 'Husband', 'White', 'Male', 0, 0, 47, 'United-States']
+[ 2023-10-14 21:03:49,150 ] 16 root - INFO - In Predict py importing models
+[ 2023-10-14 21:03:53,572 ] 24 root - INFO - Data Transoformation
+[ 2023-10-14 21:03:53,572 ] 26 root - INFO - Predicting Results
+[ 2023-10-14 21:03:53,588 ] 39 root - INFO - Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:03:53,588 ] 825 app - ERROR - Exception on /submit [POST]
+Traceback (most recent call last):
+  File "d:\emppred\src\components\predict.py", line 27, in prediction
+    data = preprocessor.transform(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 827, in transform
+    Xs = self._fit_transform(
+         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 681, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 65, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 127, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 940, in _transform_one
+    res = transformer.transform(X)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 1027, in transform
+    X_int, X_mask = self._transform(
+                    ^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 200, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 2 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\app.py", line 41, in submit
+    result = prediction(inputs)
+             ^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\src\components\predict.py", line 40, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:03:53,753 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:03:53] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+[ 2023-10-14 21:06:55,170 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:06:55] "GET / HTTP/1.1" 200 -
+[ 2023-10-14 21:07:44,821 ] 22 root - INFO - Submit command recieved
+[ 2023-10-14 21:07:44,824 ] 40 root - INFO - recieved values [51, 'Private', 108435, 'Masters', 14, None, 'Prof-specialty', 'Husband', 'White', 'Male', 0, 0, 47, 'United-States']
+[ 2023-10-14 21:07:44,824 ] 16 root - INFO - In Predict py importing models
+[ 2023-10-14 21:07:44,824 ] 24 root - INFO - Data Transoformation
+[ 2023-10-14 21:07:44,824 ] 26 root - INFO - Predicting Results
+[ 2023-10-14 21:07:44,837 ] 39 root - INFO - Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:07:44,837 ] 825 app - ERROR - Exception on /submit [POST]
+Traceback (most recent call last):
+  File "d:\emppred\src\components\predict.py", line 27, in prediction
+    data = preprocessor.transform(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 827, in transform
+    Xs = self._fit_transform(
+         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 681, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 65, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 127, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 940, in _transform_one
+    res = transformer.transform(X)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 1027, in transform
+    X_int, X_mask = self._transform(
+                    ^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 200, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 2 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\app.py", line 41, in submit
+    result = prediction(inputs)
+             ^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\src\components\predict.py", line 40, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:07:44,838 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:07:44] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+[ 2023-10-14 21:08:11,824 ] 22 root - INFO - Submit command recieved
+[ 2023-10-14 21:08:11,826 ] 40 root - INFO - recieved values [51, 'Private', 108435, 'Masters', 14, None, 'Prof-specialty', 'Husband', 'White', 'Male', 0, 0, 47, 'United-States']
+[ 2023-10-14 21:08:11,826 ] 16 root - INFO - In Predict py importing models
+[ 2023-10-14 21:08:11,826 ] 24 root - INFO - Data Transoformation
+[ 2023-10-14 21:08:11,826 ] 26 root - INFO - Predicting Results
+[ 2023-10-14 21:08:11,826 ] 39 root - INFO - Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:08:11,826 ] 825 app - ERROR - Exception on /submit [POST]
+Traceback (most recent call last):
+  File "d:\emppred\src\components\predict.py", line 27, in prediction
+    data = preprocessor.transform(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 827, in transform
+    Xs = self._fit_transform(
+         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 681, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 65, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 127, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 940, in _transform_one
+    res = transformer.transform(X)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 1027, in transform
+    X_int, X_mask = self._transform(
+                    ^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 200, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 2 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\app.py", line 41, in submit
+    result = prediction(inputs)
+             ^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\src\components\predict.py", line 40, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:08:11,840 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:08:11] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+[ 2023-10-14 21:09:17,772 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:09:17] "GET / HTTP/1.1" 200 -
+[ 2023-10-14 21:09:48,864 ] 22 root - INFO - Submit command recieved
+[ 2023-10-14 21:09:48,867 ] 40 root - INFO - recieved values [51, 'Private', 12121, 'Masters', 12, None, 'Other-service', 'Husband', 'White', 'Male', 0, 0, 47, 'United-States']
+[ 2023-10-14 21:09:48,867 ] 16 root - INFO - In Predict py importing models
+[ 2023-10-14 21:09:48,867 ] 24 root - INFO - Data Transoformation
+[ 2023-10-14 21:09:48,867 ] 26 root - INFO - Predicting Results
+[ 2023-10-14 21:09:48,880 ] 39 root - INFO - Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:09:48,880 ] 825 app - ERROR - Exception on /submit [POST]
+Traceback (most recent call last):
+  File "d:\emppred\src\components\predict.py", line 27, in prediction
+    data = preprocessor.transform(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 827, in transform
+    Xs = self._fit_transform(
+         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 681, in _fit_transform
+    return Parallel(n_jobs=self.n_jobs)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 65, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\parallel.py", line 127, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 940, in _transform_one
+    res = transformer.transform(X)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 1027, in transform
+    X_int, X_mask = self._transform(
+                    ^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\sklearn\preprocessing\_encoders.py", line 200, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 2 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\emppred\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\app.py", line 41, in submit
+    result = prediction(inputs)
+             ^^^^^^^^^^^^^^^^^^
+  File "d:\emppred\src\components\predict.py", line 40, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [d:\emppred\src\components\predict.py] line number [27] error message[Found unknown categories [None] in column 2 during transform]
+[ 2023-10-14 21:09:48,882 ] 96 werkzeug - INFO - 192.168.1.37 - - [14/Oct/2023 21:09:48] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -

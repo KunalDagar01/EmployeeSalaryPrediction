@@ -1,0 +1,18 @@
+[ 2023-10-14 15:32:31,237 ] 19 root - INFO - At model trainier
+[ 2023-10-14 15:32:31,238 ] 13 root - INFO - Data Ingestion is started
+[ 2023-10-14 15:32:31,312 ] 17 root - INFO - Saving data
+[ 2023-10-14 15:32:31,470 ] 22 root - INFO - Ingestion success
+[ 2023-10-14 15:32:31,470 ] 23 root - INFO - Training data stored at artifacts\train.csv
+[ 2023-10-14 15:32:31,470 ] 24 root - INFO - Test path stored at artifacts\test.csv
+[ 2023-10-14 15:32:31,471 ] 17 root - INFO - Initiating Pipeline
+[ 2023-10-14 15:32:31,574 ] 23 root - INFO - Splitting data in train and test
+[ 2023-10-14 15:32:31,580 ] 33 root - INFO - Establishing Pipeline
+[ 2023-10-14 15:32:31,580 ] 54 root - INFO - Pipeline creation done successfully
+[ 2023-10-14 15:32:31,581 ] 56 root - INFO - Pipleine Successfully created saving pickle file of preprocessor
+[ 2023-10-14 15:32:31,583 ] 58 root - INFO - Preprocessor saved in models
+[ 2023-10-14 15:32:31,583 ] 24 root - INFO - Splitting Sucess
+[ 2023-10-14 15:32:31,584 ] 25 root - INFO - Got Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num',
+       'marital-status', 'occupation', 'relationship', 'race', 'sex',
+       'capital-gain', 'capital-loss', 'hours-per-week', 'country'],
+      dtype='object') as column names
+[ 2023-10-14 15:32:31,585 ] 72 root - INFO - Some Error has occured

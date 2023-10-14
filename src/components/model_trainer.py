@@ -21,12 +21,20 @@ try:
     train_data_path,test_data_path = data_ingestion(raw_data_path)
     preprocessor,X_train,y_train,X_test,y_test = trainPipeline(train_data_path,test_data_path)
 
+    logging.info("Splitting Sucess")
+    logging.info(f'Got {X_test.columns} as column names')
+
+    columnsNames = list(X_test.columns)
+    with open(os.path.join("artifacts","columnNames.txt"),"w") as file:
+         file.write(','.join(columnsNames))
+
     logging.info("Transforming data")
 
     X_train = preprocessor.fit_transform(X_train)
     X_test = preprocessor.transform(X_test)
 
     logging.info("Doing hyperparameter tuning for Decision Tree Classifier")
+    pickle.dump(preprocessor, open(os.path.join("models","preprocessor.pkl"), 'wb'))
 
     parameters = {
         "criterion": ['gini','entropy','log_loss'],
